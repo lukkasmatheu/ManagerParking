@@ -1,2 +1,0 @@
-# ManagerParking
-JavaFx application 
