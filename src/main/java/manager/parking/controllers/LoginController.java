@@ -1,5 +1,6 @@
 package manager.parking.controllers;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,7 @@ public class LoginController {
 
     public void handleButtonClick() {
         String texto = txLogin.getText();
-        System.out.println("CLASE AINDA NAO CRIADA" + txLogin.getText() + txSenha.getText());
+        System.out.println("CLASSE AINDA NAO CRIADA" + txLogin.getText() + txSenha.getText());
         if (texto.equals("")) {
             System.out.println(texto);
             if(! txLogin.getStyle().contains("-fx-border-color: #ff0000"))
@@ -33,9 +34,10 @@ public class LoginController {
         try {
             System.out.print(txLogin.getText());
             Main.close();
-            Parent root = FXMLLoader.load(getClass().getResource("telaCadastro.fxml"));
+            var loader = getClass().getResource("../telaCadastro.fxml");
+            Parent root = FXMLLoader.load(loader);
             Stage stage = new Stage();
-            Main.stage= stage;
+            Main.setStage(stage);
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setResizable(false);
