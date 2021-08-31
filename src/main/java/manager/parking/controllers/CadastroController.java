@@ -6,14 +6,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import manager.parking.models.Users;
+import manager.parking.models.Clients;
 
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
-public class UsersController {
+import static manager.parking.utils.utils.criptografaSenha;
+
+public class CadastroController {
     @FXML
     private TextField txName;
     @FXML
@@ -27,22 +28,18 @@ public class UsersController {
     @FXML
     private Button btCadastro;
 
-    List<Users> usuarios = new ArrayList();
-
-
     @FXML
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
-        Users usuario = new Users();
+    protected void handleSubmitButtonAction(ActionEvent event) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Clients usuario = new Clients();
         usuario.setName(txName.getText());
         String date = datepicker.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyy"));
         if (verificaSenha()) {
-            usuario.setSenha(txSenha.getText());
+            usuario.setSenha(criptografaSenha(txSenha.getText()));
         }
         usuario.setEmail(txEmail.getText());
-        System.out.print("nome de usuario: " + usuario.getName() + " \n" +
-                " Email de usuario " + usuario.getEmail() + " Id de usuario: " + Users.getId() + " Data de nascimento:  " + date);
-        usuarios.add(usuario);
-        manager.parking.Main.close();
+        usuario.setBirthdate(date);
+        usuario.setLogin(txName.getText());
+
     }
 
     private boolean verificaSenha() {
@@ -55,4 +52,5 @@ public class UsersController {
         }
         return validation;
     }
+
 }
