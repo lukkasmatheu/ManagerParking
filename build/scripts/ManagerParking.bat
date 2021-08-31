@@ -79,7 +79,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\ManagerParking-1.0.jar;%APP_HOME%\lib\javafx-fxml-11.0.1-linux.jar;%APP_HOME%\lib\javafx-controls-11.0.1-linux.jar;%APP_HOME%\lib\javafx-controls-11.0.1.jar;%APP_HOME%\lib\javafx-graphics-11.0.1-linux.jar;%APP_HOME%\lib\javafx-graphics-11.0.1.jar;%APP_HOME%\lib\javafx-base-11.0.1-linux.jar;%APP_HOME%\lib\javafx-base-11.0.1.jar
+set CLASSPATH=%APP_HOME%\lib\ManagerParking-1.0.jar;%APP_HOME%\lib\mongodb-driver-3.3.0.jar;%APP_HOME%\lib\javafx-fxml-11.0.1-linux.jar;%APP_HOME%\lib\javafx-controls-11.0.1-linux.jar;%APP_HOME%\lib\javafx-controls-11.0.1.jar;%APP_HOME%\lib\javafx-graphics-11.0.1-linux.jar;%APP_HOME%\lib\javafx-graphics-11.0.1.jar;%APP_HOME%\lib\javafx-base-11.0.1-linux.jar;%APP_HOME%\lib\javafx-base-11.0.1.jar;%APP_HOME%\lib\gson-2.8.8.jar;%APP_HOME%\lib\mongodb-driver-core-3.3.0.jar;%APP_HOME%\lib\bson-3.3.0.jar
 
 @rem Execute ManagerParking
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %MANAGER_PARKING_OPTS%  -classpath "%CLASSPATH%" manager.parking.Main %CMD_LINE_ARGS%

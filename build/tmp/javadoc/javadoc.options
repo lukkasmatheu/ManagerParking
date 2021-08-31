@@ -1,0 +1,11 @@
+-classpath '/home/lucas.matheus/Projects/ManagerParking/build/classes/java/main:/home/lucas.matheus/Projects/ManagerParking/build/resources/main:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/11.0.1/616cebdad44013674175c710427d0ef94b96bffd/javafx-fxml-11.0.1-linux.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11.0.1/e26db61c03faefb09030a5b7b03fa8ce55bb3d04/javafx-controls-11.0.1-linux.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11.0.1/61cf91bf3494d0616216f49c9e1d183d170adf0a/javafx-controls-11.0.1.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11.0.1/bcd06886f9fe50da362537eb0e779354e5c38181/javafx-graphics-11.0.1-linux.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11.0.1/e062cb01783effc6413abbd94d1838f6b0add209/javafx-graphics-11.0.1.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11.0.1/4cb7db1adb33b2c0edc458917158664f0107365c/javafx-base-11.0.1-linux.jar:/home/lucas.matheus/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11.0.1/f1354a284f4151d20358e776f6ff68ee35bbb96d/javafx-base-11.0.1.jar'
+-d '/home/lucas.matheus/Projects/ManagerParking/build/docs/javadoc'
+-doctitle 'ManagerParking 1.0 API'
+-notimestamp 
+-quiet 
+-windowtitle 'ManagerParking 1.0 API'
+'/home/lucas.matheus/Projects/ManagerParking/src/main/java/manager/parking/controllers/UsersController.java'
+'/home/lucas.matheus/Projects/ManagerParking/src/main/java/manager/parking/controllers/LoginController.java'
+'/home/lucas.matheus/Projects/ManagerParking/src/main/java/manager/parking/Main.java'
+'/home/lucas.matheus/Projects/ManagerParking/src/main/java/manager/parking/models/Cars.java'
+'/home/lucas.matheus/Projects/ManagerParking/src/main/java/manager/parking/models/Users.java'

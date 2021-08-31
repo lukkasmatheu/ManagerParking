@@ -5,17 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import manager.parking.controllers.SceneController;
 
 public class Main extends Application {
-    public static Stage stage;
-
-    public static Stage getStage() {
-        return stage;
-    }
-
-    public static void setStage(Stage alternateStage) {
-        stage = alternateStage;
-    }
 
     public static void main(String[] args) {
         launch(args);
@@ -23,20 +15,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        var loadPrimaryView = getClass().getResource("telaLogin.fxml");
-        Parent root = FXMLLoader.load(loadPrimaryView);
-
-        stage.setTitle("LOGIN");
-
-        stage.setScene(new Scene(root));
-        stage.show();
-        this.stage = stage;
-        // stage da tela inicial.
-        stage.setResizable(false);
+        SceneController controlerstage = new SceneController(stage);
     }
 
-    public static void close() {
-        stage.close();
-    }
 }
 
