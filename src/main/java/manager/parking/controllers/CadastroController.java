@@ -16,7 +16,9 @@ import static manager.parking.utils.utils.criptografaSenha;
 
 public class CadastroController {
     @FXML
-    private TextField txName;
+    private TextField txLogin;
+    @FXML
+    private TextField txNome;
     @FXML
     private PasswordField txSenha;
     @FXML
@@ -31,14 +33,14 @@ public class CadastroController {
     @FXML
     protected void handleSubmitButtonAction(ActionEvent event) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         Clients usuario = new Clients();
-        usuario.setName(txName.getText());
+        usuario.setName(txNome.getText());
         String date = datepicker.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyy"));
         if (verificaSenha()) {
             usuario.setSenha(criptografaSenha(txSenha.getText()));
         }
         usuario.setEmail(txEmail.getText());
         usuario.setBirthdate(date);
-        usuario.setLogin(txName.getText());
+        usuario.setLogin(txLogin.getText());
 
     }
 

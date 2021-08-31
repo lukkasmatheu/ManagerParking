@@ -3,6 +3,7 @@ package manager.parking.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import manager.parking.models.Clients;
@@ -28,17 +29,20 @@ public class LoginController {
     @FXML
     private PasswordField txSenha;
 
-    public void handleButtonClick() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    @FXML
+    protected void handleButtonClick() throws UnsupportedEncodingException, NoSuchAlgorithmException {
         if (txLogin.getText().equals("")) {
             if (!txLogin.getStyle().contains("-fx-border-color: #ff0000"))
                 txLogin.setStyle(txLogin.getStyle() + "-fx-border-color: #ff0000 ");
         }
-        if (validaLogin()) {
-            try {
-                System.out.print(txLogin.getText());
-                alterarTela(TelasEnum.MENU_USER);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(txLogin.getText().length() > 5 && txSenha.getText().length() > 5){
+            if (validaLogin()) {
+                try {
+                    System.out.print(txLogin.getText());
+                    alterarTela(TelasEnum.MENU_USER);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
