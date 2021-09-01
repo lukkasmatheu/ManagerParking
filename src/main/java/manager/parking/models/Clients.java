@@ -11,8 +11,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @EqualsAndHashCode
+@Data
 public class Clients {
     private String name;
     private String phone;
@@ -24,5 +24,6 @@ public class Clients {
     private List<Estacionamento> historicoEstacionamento;
     private boolean userDesative;
     private String cardCode;
+    private boolean isAdmin;
 
 }

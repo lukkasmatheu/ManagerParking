@@ -12,11 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Estacionamento {
-    private String Date;
+    private String data;
     private String vaga;
     private String andar;
     private String horarioEntrada;
     private String horarioSaida;
+    private Float valor;
     private boolean pago;
     private boolean open;
 

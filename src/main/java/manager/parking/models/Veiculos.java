@@ -1,10 +1,6 @@
 package manager.parking.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import manager.parking.models.enumerations.TypesVeiculosEnum;
 
 @Data
@@ -13,7 +9,8 @@ import manager.parking.models.enumerations.TypesVeiculosEnum;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Veiculos {
-    String placa;
-    String modelo;
-    TypesVeiculosEnum tipoVeiculo;
+    private String marca;
+    private String placa;
+    private String modelo;
+    private TypesVeiculosEnum tipoVeiculo;
 }

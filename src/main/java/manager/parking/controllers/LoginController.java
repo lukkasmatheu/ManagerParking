@@ -3,7 +3,6 @@ package manager.parking.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import manager.parking.models.Clients;
@@ -14,8 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 import static manager.parking.config.Conexao.findClient;
-import static manager.parking.controllers.SceneController.alterarTela;
-import static manager.parking.controllers.SceneController.setUsuarioSessao;
+import static manager.parking.controllers.SceneController.*;
 import static manager.parking.utils.utils.criptografaSenha;
 
 public class LoginController {
@@ -35,11 +33,15 @@ public class LoginController {
             if (!txLogin.getStyle().contains("-fx-border-color: #ff0000"))
                 txLogin.setStyle(txLogin.getStyle() + "-fx-border-color: #ff0000 ");
         }
-        if(txLogin.getText().length() > 5 && txSenha.getText().length() > 5){
+        if (txLogin.getText().length() > 5 && txSenha.getText().length() > 5) {
             if (validaLogin()) {
                 try {
                     System.out.print(txLogin.getText());
-                    alterarTela(TelasEnum.MENU_USER);
+                    if (clienteSistema.isAdmin()) {
+                        alterarTela(TelasEnum.MENU_ADMIN);
+                    } else {
+                        alterarTela(TelasEnum.MENU_USER);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
