@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.parking.controllers.CadastroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.parking.controllers.EntryController">
    <children>
       <Pane prefHeight="417.0" prefWidth="345.0" style="-fx-background-color: #424344;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -37,28 +37,28 @@
                   <Font name="Lucida Bright" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="74.0" layoutY="388.0" text="12/11/2021" textFill="WHITE">
+            <Label fx:id="lbData" layoutX="74.0" layoutY="388.0" text="12/11/2021" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="116.0" layoutY="89.0" text="L32" textFill="WHITE">
+            <Label fx:id="lbVaga" layoutX="116.0" layoutY="89.0" text="L32" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="116.0" layoutY="135.0" text="CLIENTE" textFill="WHITE">
+            <Label fx:id="lbCliente" layoutX="116.0" layoutY="135.0" text="CLIENTE" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright" size="12.0" />
                </font>
             </Label>
             <Separator layoutX="92.0" layoutY="66.0" orientation="VERTICAL" prefHeight="139.0" prefWidth="0.0" />
-            <Label layoutX="116.0" layoutY="176.0" text="12:00:15" textFill="WHITE">
+            <Label fx:id="lbTime" layoutX="116.0" layoutY="176.0" text="12:00:15" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="227.0" layoutY="382.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #3d3d3d; -fx-text-fill: #FFF; -fx-border-color: #FFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="voltar" />
+            <Button layoutX="227.0" layoutY="382.0" mnemonicParsing="false" onAction="#voltarMenu" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #3d3d3d; -fx-text-fill: #FFF; -fx-border-color: #FFF; -fx-background-radius: 8; -fx-border-radius: 8;" text="voltar" />
          </children>
       </Pane>
    </children>

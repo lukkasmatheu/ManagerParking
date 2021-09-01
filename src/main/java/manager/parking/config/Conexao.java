@@ -2,6 +2,7 @@ package manager.parking.config;
 
 
 import com.google.gson.Gson;
+import com.mongodb.BulkWriteOperation;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
@@ -36,19 +37,16 @@ public class Conexao {
         }
     }
 
-    public static MongoCollection<Document> getDataBase() {
-        return collection;
-    }
-
     public static void saveClient(@NonNull Clients clients) {
         Gson gson = new Gson();
         Document query = new Document().append("login", clients.getLogin());
         Document client = collection.find(query).first();
-        if (client.isEmpty()) {
+        if (client != null) {
             System.out.println("Cliente ja cadastrado");
+        }else{
+            Document obj = Document.parse(gson.toJson(clients));
+            collection.insertOne(obj);
         }
-        Document obj = (Document) JSON.parse(gson.toJson(clients));
-        collection.insertOne(obj);
     }
 
     public static List<Clients> findClients() {
@@ -59,7 +57,7 @@ public class Conexao {
             while (cursor.hasNext()) {
                 Document dbobj = cursor.next();
                 //Converting BasicDBObject to a custom Class(Employee)
-                Clients emp = (new Gson()).fromJson(dbobj.toString(), Clients.class);
+                Clients emp = (new Gson()).fromJson(dbobj.toJson(), Clients.class);
                 clientes.add(emp);
                 System.out.println(emp.getName());
             }
@@ -75,11 +73,12 @@ public class Conexao {
 
         Document query = new Document().append("login", loginClient);
         Document client = collection.find(query).first();
-        try {
-            return (new Gson()).fromJson(client.toString(), Clients.class);
-
-        } catch (Exception e) {
-            System.out.println("[Mensage]-Error ao buscar Cliente" + e.getMessage());
+        if (client != null) {
+            try {
+                return (new Gson()).fromJson(client.toJson(), Clients.class);
+            } catch (Exception e) {
+                System.out.println("[Mensage]-Error ao buscar Cliente" + e.getMessage());
+            }
         }
         return null;
     }

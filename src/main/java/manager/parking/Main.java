@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import manager.parking.config.Conexao;
 import manager.parking.controllers.SceneController;
 
 public class Main extends Application {
@@ -15,6 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        Conexao conexao = new Conexao();
         SceneController controlerstage = new SceneController(stage);
     }
 

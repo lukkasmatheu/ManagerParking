@@ -39,9 +39,8 @@ public class BuscarClientesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tbView.getItems().setAll(findClients());
     }
-
     @FXML
-    protected void filterListHistory(ActionEvent e) {
+    protected void filterListHistory() {
         List<Clients> clientes = findClients();
         if (inputText.getText().equals("") || inputText.getText().isEmpty()) {
             observableList(clientes);
