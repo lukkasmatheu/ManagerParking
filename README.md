@@ -21,16 +21,11 @@ gradle clean build && gradle run
 
 ![image](https://user-images.githubusercontent.com/57408709/131682259-da46b430-37de-42e4-9869-8fe80dddccae.png)
 
-![image](https://user-images.githubusercontent.com/57408709/131682515-afb747c6-b11e-404e-8a86-299c9e52e7cb.png)
-
-![image](https://user-images.githubusercontent.com/57408709/131682569-badc54e3-1082-46f5-9876-cd9531c9c5e8.png)
 
 ![image](https://user-images.githubusercontent.com/57408709/131682788-6b88ef60-a878-485b-b5fc-dda6b11d4695.png)
 
 ![image](https://user-images.githubusercontent.com/57408709/131682902-88e3afd8-dc93-4117-8b49-722265206303.png)
 
-
-![image](https://user-images.githubusercontent.com/57408709/131683083-c11da871-578e-4e8c-af54-88e03b8ef664.png)
 
 ![image](https://user-images.githubusercontent.com/57408709/131683201-64890714-4608-4333-9f1e-5e4eda529ed3.png)
 
