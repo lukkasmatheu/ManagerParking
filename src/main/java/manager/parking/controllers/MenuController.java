@@ -28,7 +28,7 @@ public class MenuController {
     @FXML
     protected void openViewTicketEntrada(ActionEvent event) {
         try {
-            alterarTela(TelasEnum.CADASTRO);
+            alterarTela(TelasEnum.TICKET_ENTRADA);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,11 +36,9 @@ public class MenuController {
     @FXML
     protected void openViewTicketSaida(ActionEvent event) {
         try {
-            alterarTela(TelasEnum.CADASTRO);
+            alterarTela(TelasEnum.TICKET_SAIDA);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }
