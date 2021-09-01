@@ -58,7 +58,7 @@ public class CadastroController {
                 System.out.println("[CONTROLLER]- ERRO AO ALTERAR PARA TELA DE CADASTRO DO VEICULO" + e.getMessage());
             }
         }else{
-            txSenha.setStyle(txSenha.getStyle() + "-fx-border-color: #ff0000 ");
+            txContraSenha.setStyle(txContraSenha.getStyle() + "-fx-border-color: #ff0000 ");
         }
     }
 
