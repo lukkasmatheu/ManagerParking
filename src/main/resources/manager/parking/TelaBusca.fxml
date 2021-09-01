@@ -10,18 +10,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="440.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="manager.parking.controllers.BuscarClientesController" >
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.parking.controllers.BuscarClientesController">
    <children>
       <Pane layoutX="-1.0" prefHeight="442.0" prefWidth="446.0" style="-fx-background-color: #424344;">
          <children>
-            <TextField layoutX="60.0" layoutY="57.0" prefHeight="27.0" prefWidth="223.0" style="-fx-background-color: #333333 #333333; -fx-border-color: #f1f1f1; -fx-background-radius: 8; -fx-border-radius: 8;" />
-            <Button layoutX="299.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Buscar" />
+            <TextField fx:id="inputText" layoutX="60.0" layoutY="57.0" prefHeight="27.0" prefWidth="223.0" style="-fx-background-color: #333333 #333333; -fx-border-color: #f1f1f1; -fx-background-radius: 8; -fx-border-radius: 8;" />
+            <Button fx:id="button" layoutX="299.0"  layoutY="58.0" mnemonicParsing="false" onAction="#filterListHistory" prefHeight="25.0" prefWidth="133.0" text="Buscar" />
             <Label layoutX="14.0" layoutY="62.0" style="-fx-text-fill: #FFF;" text="NOME" />
-            <TableView layoutX="-3.0" layoutY="96.0" prefHeight="346.0" prefWidth="452.0" style="-fx-background-color: #424344;">
+            <TableView fx:id="tbView" layoutX="-3.0" layoutY="96.0" prefHeight="346.0" prefWidth="452.0" style="-fx-background-color: #424344;">
               <columns>
-                <TableColumn prefWidth="130.0" text="Nome" />
-                <TableColumn prefWidth="116.0" text="telefone" />
-                  <TableColumn prefWidth="204.0" text="Email" />
+                <TableColumn fx:id="clNome" prefWidth="130.0" text="Nome" />
+                <TableColumn fx:id="clPhone" prefWidth="116.0" text="telefone" />
+                  <TableColumn fx:id="clMail" prefWidth="204.0" text="Email" />
               </columns>
             </TableView>
             <Label layoutX="144.0" layoutY="14.0" style="-fx-text-fill: #FFF;" text="BUSCAR USARIOS" textFill="WHITE">

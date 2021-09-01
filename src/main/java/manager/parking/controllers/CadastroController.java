@@ -16,9 +16,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import static manager.parking.config.Conexao.saveClient;
 import static manager.parking.controllers.SceneController.alterarTela;
+import static manager.parking.controllers.SceneController.clienteSistema;
+import static manager.parking.controllers.SceneController.setUsuarioSessao;
 import static manager.parking.utils.utils.criptografaSenha;
 
 public class CadastroController implements Initializable {
@@ -54,6 +58,7 @@ public class CadastroController implements Initializable {
             usuario.setEmail(txEmail.getText());
             usuario.setBirthdate(date);
             usuario.setLogin(txLogin.getText());
+            setUsuarioSessao(usuario);
             try {
                 alterarTela(TelasEnum.CADASTRO_VEICULO);
 
@@ -68,15 +73,20 @@ public class CadastroController implements Initializable {
     @FXML
     protected void cadastraVeiculo(ActionEvent event) {
         Veiculos veic = new Veiculos();
+        usuario = clienteSistema ;
         if (!txPlaca.getText().isEmpty() && !txMarca.getText().isEmpty() && !txModelo.getText().isEmpty()) {
-            veic.builder()
-                    .marca(txMarca.getText())
-                    .modelo(txModelo.getText())
-                    .placa(txPlaca.getText())
-                    .tipoVeiculo(fxTipo.getValue())
-                    .build();
+
+            veic.setMarca(txMarca.getText().toString());
+            veic.setModelo(txModelo.getText().toString());
+            veic.setPlaca(txPlaca.getText().toString());
+            veic.setTipoVeiculo(fxTipo.getValue());
             usuario.setVeiculo(veic);
+            System.out.print(veic);
+            usuario.setHistoricoEstacionamento(new ArrayList<>());
+            usuario.setPhone("(88)99999-9999");
+            saveClient(usuario);
             try {
+                clienteSistema = new Clients();
                 alterarTela(TelasEnum.LOGIN);
             } catch (Exception e) {
                 System.out.println("[CONTROLLER]- ERRO AO ALTERAR PARA TELA DE MENU");
@@ -99,6 +109,8 @@ public class CadastroController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        usuario = new Clients();
         fxTipo.getItems().setAll(TypesVeiculosEnum.values());
     }
+
 }
