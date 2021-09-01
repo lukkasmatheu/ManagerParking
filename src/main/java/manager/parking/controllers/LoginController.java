@@ -13,8 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 import static manager.parking.config.Conexao.findClient;
-import static manager.parking.controllers.SceneController.alterarTela;
-import static manager.parking.controllers.SceneController.setUsuarioSessao;
+import static manager.parking.controllers.SceneController.*;
 import static manager.parking.utils.utils.criptografaSenha;
 
 public class LoginController {
@@ -28,17 +27,24 @@ public class LoginController {
     @FXML
     private PasswordField txSenha;
 
-    public void handleButtonClick() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    @FXML
+    protected void handleButtonClick() throws UnsupportedEncodingException, NoSuchAlgorithmException {
         if (txLogin.getText().equals("")) {
             if (!txLogin.getStyle().contains("-fx-border-color: #ff0000"))
                 txLogin.setStyle(txLogin.getStyle() + "-fx-border-color: #ff0000 ");
         }
-        if (validaLogin()) {
-            try {
-                System.out.print(txLogin.getText());
-                alterarTela(TelasEnum.MENU_USER);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if (txLogin.getText().length() > 5 && txSenha.getText().length() > 5) {
+            if (validaLogin()) {
+                try {
+                    System.out.print(txLogin.getText());
+                    if (clienteSistema.isAdmin()) {
+                        alterarTela(TelasEnum.MENU_ADMIN);
+                    } else {
+                        alterarTela(TelasEnum.MENU_USER);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
