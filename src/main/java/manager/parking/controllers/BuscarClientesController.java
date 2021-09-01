@@ -3,6 +3,7 @@ package manager.parking.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -10,14 +11,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import manager.parking.models.Clients;
 import manager.parking.models.Estacionamento;
+import manager.parking.models.enumerations.TypesVeiculosEnum;
 
 import java.awt.event.ActionEvent;
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 import static manager.parking.config.Conexao.findClients;
 
-public class BuscarClientesController {
+public class BuscarClientesController implements Initializable {
     @FXML
     private TableView tbView;
     @FXML
@@ -30,6 +34,11 @@ public class BuscarClientesController {
     private TableColumn<Estacionamento, String> clPhone;
     @FXML
     private TableColumn<Estacionamento, String> clMail;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        tbView.getItems().setAll(findClients());
+    }
 
     @FXML
     protected void filterListHistory(ActionEvent e) {
