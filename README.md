@@ -9,7 +9,7 @@ Para executar o projeto abra em uma IDE e execute
 gradle clean build && gradle run
 ~~~
 
-#### É nescessario estar com o mongo rodando na porta padrao(27017) para a execução do sistema
+#### É necessario estar com o mongo rodando na porta padrao(27017) para a execução do sistema
 #### Gradle version > 6 
 #### java version >= 11
 
